@@ -12,7 +12,9 @@ const dbPort = process.env.MONGO_DB_PORT;
 const dbName = process.env.MONGO_DB_NAME;
 
 // const mongoUrl = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@localhost:27017/${process.env.MONGO_DB_NAME}`;
-const mongoUrl = `mongodb://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`;
+let mongoUrl = `mongodb://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`;
+mongoUrl = 'mongodb://root:root@localhost:27017/car_manager';
+console.log(mongoUrl);
 
 @Module({
   imports: [
