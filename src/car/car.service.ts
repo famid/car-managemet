@@ -1,5 +1,9 @@
-import { HttpException, Injectable } from '@nestjs/common';
-import { CARS } from './car.mock.data';
+import { HttpException, Injectable } from "@nestjs/common";
+import { CARS } from "./car.mock.data";
+import { Model } from "mongoose";
+import { InjectModel } from "@nestjs/mongoose";
+import { ICar } from "./interfaces/car.interface";
+import { CarDto } from "./car.dto";
 
 @Injectable()
 export class CarService {
