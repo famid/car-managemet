@@ -5,7 +5,6 @@ import { UserModule } from './user/user.module';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { CarModule } from './car/car.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UsersService } from './users/users.service';
 
 // const dbUser = process.env.MONGO_DB_USER;
 // const dbPassword = process.env.MONGO_DB_PASSWORD;
@@ -31,6 +30,5 @@ import { UsersService } from './users/users.service';
     BookmarkModule,
     CarModule,
   ],
-  providers: [UsersService],
 })
 export class AppModule {}
