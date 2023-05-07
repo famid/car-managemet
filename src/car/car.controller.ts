@@ -7,20 +7,24 @@ import {
   Post,
   Put,
   Query,
+  UseGuards,
 } from '@nestjs/common';
 import { CarService } from './car.service';
 import { CarDto } from './car.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('car')
 export class CarController {
   constructor(private carService: CarService) {}
 
   @Get()
+  // @UseGuards(AuthGuard('jwt'))
   async getCars() {
     return await this.carService.getCars();
   }
 
   @Post()
+  @UseGuards(AuthGuard('jwt'))
   public async storeCar(@Body() car: CarDto) {
     return await this.carService.storeCar(car);
   }
