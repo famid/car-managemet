@@ -18,7 +18,7 @@ export class CarController {
   constructor(private carService: CarService) {}
 
   @Get()
-  // @UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthGuard('jwt'))
   async getCars() {
     return await this.carService.getCars();
   }
